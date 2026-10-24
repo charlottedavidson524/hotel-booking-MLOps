@@ -22,14 +22,17 @@ A hotel booking canecllation dataset found on Kaggle. The dataset is originally 
 
 - Original source: https://www.sciencedirect.com/science/article/pii/S2352340918315191
 
-Dataset isn't included in the repo. Instead download it to `data/raw/`
+Dataset isn't included in the repo. The download script (see quick start below) fetches it.
 
 ## Quick Start
 
 ``` cmd
+git clone https://github.com/<your-username>/hotel-booking-MLOps.git
+cd hotel-booking-MLOps
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
+python scripts\download_data.py
 ```
 
 - Add training, serving and Docker commands later

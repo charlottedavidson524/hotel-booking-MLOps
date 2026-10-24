@@ -218,3 +218,24 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# PROJECT SPECIFIC
+
+# Data (downloaded via scripts/download_data.py)
+data/raw/*
+data/processed/*
+data/external/*
+!data/**/.gitkeep
+
+# MLflow + model outputs
+mlruns/
+mlartifacts/
+artifacts/
+
+# Reports and app cache
+reports/
+.gradio/
+
+# OS files
+.DS_Store
+Thumbs.db

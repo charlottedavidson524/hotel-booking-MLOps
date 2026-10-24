@@ -1,0 +1,27 @@
+# Data and modelling
+pandas
+numpy 
+scikit-learn
+xgboost
+joblib
+kagglehub
+
+# Notebooks and plots (EDA)
+jupyter
+ipykernel
+matplotlib
+seaborn
+
+# Tracking and validation
+mlflow
+great-expectations
+
+# Serving
+fastapi
+uvicorn
+pydantic
+gradio
+python-dotenv
+
+# Testing
+pytest
