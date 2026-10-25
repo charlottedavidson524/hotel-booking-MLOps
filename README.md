@@ -9,7 +9,7 @@ This is a binary classification problem, and is built using the full lifecycle f
 - **Experiment tracking**: MLFlow
 - **Data validation**: Great Expectations
 - **Model**: XGBoost 
-- **API and UI**: FastAPI and Streamlit
+- **API and UI**: FastAPI and Gradio
 - **Container**: Docker
 - **CI/CD**: GitHub Actions
 - **Cloud**: Azure Container Apps
