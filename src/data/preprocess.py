@@ -6,8 +6,8 @@ TARGET_COL = "booking_status"
 # with API later
 
 COLUMN_MAPPING = {
-    "Booking ID": "booking_id",
-    "Number of adults": "n_adults",
+    "Booking_ID": "booking_id",
+    "number of adults": "n_adults",
     "number of children": "n_children",
     "number of weekend nights": "n_weekend_nights",
     "number of week nights": "n_week_nights",
@@ -47,7 +47,8 @@ def preprocess_data(df: pd.DataFrame, target_col: str = TARGET_COL) -> pd.DataFr
 
     # Target to 0/1 if it's still text
     if target_col in df.columns and not pd.api.types.is_numeric_dtype(df[target_col]):
-        df[target_col] = (df[target_col].str.strip()== "Canceled".astype(int))
+        df[target_col] = (df[target_col].str.strip() == "Canceled").astype(int)
+
 
     # Parse dates. Invalid ones (37 rows of '2018-2-29') become NaT and are dropped
     if "reservation_date" in df.columns:
