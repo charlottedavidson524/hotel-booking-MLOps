@@ -32,14 +32,33 @@ cd hotel-booking-MLOps
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
-python scripts\download_data.py
+python -m src.data.download_data
 ```
 
 - Add training, serving and Docker commands later
 
 ## Results
 
-- Add metrics later
+The baseline results (from the notebook, with 80/20 group-aware stratified split, threshold 0.5):
+
+| Model | Precision | Recall | F1 | ROC-AUC |
+|---|---|---|---|---|
+| Logistic Regression | 0.632 | 0.760 | 0.690 | 0.859 |
+| Random Forest | 0.733 | 0.741 | 0.737 | 0.902 |
+| LightGBM | 0.722 | 0.821 | 0.768 | 0.927 |
+| **XGBoost** | 0.720 | 0.801 | 0.758 | 0.921 |
+
+XGBoost was chosen for it's prediction speed which was around 5x faster than LightGBM with very similar performance.
+
+Optuna tuning (5-fold grouped CV) didn't provide any improvement over baseline parameters
+
+## Key Findings
+
+- Lead time is the strongest predictor. Guests with special requests, parking or repeat stays rarely cancel
+
+- 28% of rows are duplicates once the ID is ignored (most likely group bookings). These are kept but a group aware split is used to prevent train/test leakage.
+
+- Cancellation rates shiffted sharply between 2017 and 2018, so year is excluded as a feature and drift monitoring is going to be planned after deployment.
 
 ## Live demo 
 

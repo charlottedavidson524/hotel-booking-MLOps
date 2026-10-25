@@ -9,8 +9,8 @@ import kagglehub
 
 DATASET = "youssefaboelwafa/hotel-booking-cancellation-prediction"
 
-# Set project root (one level up from Scripts)
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+# Set project root (two levels up from Scripts)
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 RAW_DIR = PROJECT_ROOT/"data"/"raw"
 
 def main() -> None:
